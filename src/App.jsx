@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Route from "./Routes/route";
+import { ThemeProvider } from "@emotion/react";
+import { coustomTheme } from "./theme/theme";
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <>
+      <ThemeProvider theme={coustomTheme}>
+        <Route />
+      </ThemeProvider>
+    </>
+  );
+};
 
-export default App
+export default App;
