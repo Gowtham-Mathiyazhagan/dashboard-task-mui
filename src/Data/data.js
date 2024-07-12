@@ -108,4 +108,14 @@ export const dashboardTable = {
     ["kenan", "1", "1", "1", "1", "1", "1", "1", "1", "1", ],
     ["pmo", "1", "1", "1", "1", "1", "1", "1", "1", "1", ],
   ],
+  collapse: [
+    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
+    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
+    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
+    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
+    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
+    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
+    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
+    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
+  ],
 };

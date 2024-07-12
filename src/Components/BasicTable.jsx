@@ -6,16 +6,31 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import IconButton from "@mui/material/IconButton";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
+import Collapse from '@mui/material/Collapse';
 
-export default function BasicTable({ props }) {
+
+export default function BasicTable({ props, view, edit }) {
+  const handleView = ()=>{
+
+  }
+  const handleEdit = ()=>{
+
+  }
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ textTransform:"uppercase" }} aria-label="simple table">
+      <Table sx={{ textTransform: "uppercase" }} aria-label="simple table">
         <TableHead>
-          <TableRow sx={{ backgroundColor: "secondary.light", color: "white" }}>
-            {props?.head.map((data) => (
-              <TableCell key={data}>{data}</TableCell>
+          <TableRow sx={{ backgroundColor: "secondary.light"}}>
+            {view && <TableCell>view</TableCell>}
+
+            {props?.head.map((data, i) => (
+              <TableCell  key={i.toString()}>{data}</TableCell>
             ))}
+            {view && <TableCell>view</TableCell>}
+            {edit && <TableCell>edit</TableCell>}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -24,9 +39,33 @@ export default function BasicTable({ props }) {
               key={row}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              {row.map((data) => (
-                <TableCell  align="left">{data}</TableCell>
+              {row.map((data, i) => (
+                <TableCell   key={i.toString()} align="left">
+                  {data}
+                </TableCell>
               ))}
+              {view && (
+                <TableCell>
+                  <IconButton
+                    aria-label="view"
+                    onClick={handleView}
+                    color="secondary"
+                  >
+                    <RemoveRedEyeOutlinedIcon />
+                  </IconButton>
+                </TableCell>
+              )}
+              {edit && (
+                <TableCell>
+                  <IconButton
+                    aria-label="edit"
+                    onClick={handleEdit}
+                    color="secondary"
+                  >
+                    <CreateOutlinedIcon />
+                  </IconButton>
+                </TableCell>
+              )}
             </TableRow>
           ))}
         </TableBody>
@@ -34,23 +73,3 @@ export default function BasicTable({ props }) {
     </TableContainer>
   );
 }
-
-//   <TableCell align="right">Calories</TableCell>
-//   <TableCell align="right">Fat&nbsp;(g)</TableCell>
-//   <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-//   <TableCell align="right">Protein&nbsp;(g)</TableCell>
-
-// {rows.map((row) => (
-// 	<TableRow
-// 	  key={row.name}
-// 	  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-// 	>
-// 	  <TableCell component="th" scope="row">
-// 		{row.name}
-// 	  </TableCell>
-// 	  <TableCell align="right">{row.calories}</TableCell>
-// 	  <TableCell align="right">{row.fat}</TableCell>
-// 	  <TableCell align="right">{row.carbs}</TableCell>
-// 	  <TableCell align="right">{row.protein}</TableCell>
-// 	</TableRow>
-//   ))}

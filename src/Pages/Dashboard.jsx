@@ -12,7 +12,7 @@ const Dashboard = () => {
 <Box display="flex" flexDirection='column' gap={5}>
   <Typography variant="h5" sx={headLineTypo}>dashboard</Typography>
   <CardDashboard/>
-  <BasicTable props={dashboardTable}/>
+  <BasicTable props={dashboardTable} />
   <ChartData />
 </Box>
 </>

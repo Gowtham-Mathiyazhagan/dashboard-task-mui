@@ -21,7 +21,7 @@ const DrawerLeft = ({drawerActive}) => {
 
   const handleClickDrawerItem = (data) => {
     activeObj?.setActive(data[0]);
-    navigate(`${data[1]}`);
+    navigate(`/item/${data[1]}`);
   };
   return (
     <>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import styled from "styled-components";
-import { Box, ListItemButton, MenuItem } from "@mui/material";
+import { Box, ListItemButton, MenuItem, Typography } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -148,7 +148,7 @@ export const SelectTextFieldCompo = ({ props }) => {
   );
 };
 
-export const SelectDate = () => {
+export const SelectDateCompo = () => {
   const [date, setDate] = useState(null);
 
   function handleChange(val) {
@@ -173,3 +173,9 @@ export const SelectDate = () => {
     </>
   );
 };
+
+export const StyledTypoAddresource = styled(Typography)`
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 800 !important;
+`

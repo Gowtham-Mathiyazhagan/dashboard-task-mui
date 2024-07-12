@@ -29,6 +29,7 @@ export const headLineTypo = {
 
 //  date style
 export const StyledDate = {
+  width:"100%",
   '& .MuiInputBase-root': {
     fontSize: '13px',
     color: 'var(--text)',
