@@ -78,7 +78,7 @@ export const cardDashboard = [
   {
     icon: connect,
     title: "total",
-    no: "1,244",
+    no: "244",
     color: "#2563eb",
     bg: "#eff6ff",
   },
@@ -99,23 +99,55 @@ export const dashboardTable = {
     "cnx",
   ],
   rows: [
-    ["bss", "1", "1", "1", "1", "1", "1", "1", "1", "1", ],
-    ["akana", "1", "1", "1", "1", "1", "1", "1", "1", "1", ],
-    ["beehive", "1", "1", "1", "1", "1", "1", "1", "1", "1", ],
-    ["cnx", "1", "1", "1", "1", "1", "1", "1", "1", "1",],
-    ["channels", "1", "1", "1", "1", "1", "1", "1", "1", "1",],
-    ["cto-con", "1", "1", "1", "1", "1", "1", "1", "1", "1", ],
-    ["kenan", "1", "1", "1", "1", "1", "1", "1", "1", "1", ],
-    ["pmo", "1", "1", "1", "1", "1", "1", "1", "1", "1", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["akana", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["beehive", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["cnx", "val", "val", "val", "val", "val", "val", "val", "val", "val",],
+    ["channels", "val", "val", "val", "val", "val", "val", "val", "val", "val",],
+    ["cto-con", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["kenan", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["pmo", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
   ],
-  collapse: [
-    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
-    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
-    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
-    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
-    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
-    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
-    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
-    ["xx","xx","xx","xx","xx","xx","xx","xx","xx", ],
+};
+export const collapseleTableData = {
+  head: [
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+  ],
+  rows: [
+    {row:["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+      collapseRow:[["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ]]
+    },
+    {row:["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+      collapseRow:[["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ]]
+    },
+    {row:["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+      collapseRow:[["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ]]
+    },
+    {row:["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+      collapseRow:[["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ]]
+    },
+    {row:["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+      collapseRow:[["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ],
+    ["bss", "val", "val", "val", "val", "val", "val", "val", "val", "val", ]]
+    },
+   
   ],
 };

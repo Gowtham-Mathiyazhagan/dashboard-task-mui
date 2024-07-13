@@ -1,9 +1,9 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import { headLineTypo } from "../theme/customThemeData";
-import BasicTable from "../Components/BasicTable";
 import { collapseleTableData, dashboardTable } from "../Data/data";
 import { SelectDateCompo, TextFieldCompo } from "../Components/CustomField";
+import CollapseTable from "../Components/CollapseTable";
 
 const ResourceTrack = () => {
   return (
@@ -17,7 +17,7 @@ const ResourceTrack = () => {
         <SelectDateCompo />
         <SelectDateCompo />
       </Stack>
-      <BasicTable props={collapseleTableData} view={true} collapse={true} />
+      <CollapseTable props={collapseleTableData}  />
     </Box>
   );
 };

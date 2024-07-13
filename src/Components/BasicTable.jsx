@@ -9,30 +9,16 @@ import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import Collapse from "@mui/material/Collapse";
-import ControlPointOutlinedIcon from "@mui/icons-material/ControlPointOutlined";
-import RemoveCircleOutlineOutlinedIcon from "@mui/icons-material/RemoveCircleOutlineOutlined";
-import { Box } from "@mui/material";
 
-export default function BasicTable({ props, view, edit, collapse }) {
-  const [open, setOpen] = useState(Array(props?.rows.length).fill(false));
-
+export default function BasicTable({ props, view, edit }) {
   const handleView = () => {};
   const handleEdit = () => {};
-
-  const handleCollapse = (index) => {
-    setOpen((prevOpen) => {
-      const newOpen = [...prevOpen];
-      return newOpen.map((data, i) => (i === index ? !data : false));
-    });
-  };
 
   return (
     <TableContainer component={Paper}>
       <Table sx={{ textTransform: "uppercase" }} aria-label="simple table">
         <TableHead>
           <TableRow sx={{ backgroundColor: "secondary.light" }}>
-            {collapse && <TableCell />}
             {props?.head.map((data, i) => (
               <TableCell key={i.toString()}>{data}</TableCell>
             ))}
@@ -46,27 +32,12 @@ export default function BasicTable({ props, view, edit, collapse }) {
               <TableRow
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                {collapse && (
-                  <TableCell>
-                    <IconButton
-                      aria-label="collapse"
-                      onClick={() => handleCollapse(rowIndex)}
-                      color="secondary"
-                    >
-                      {open[rowIndex] ? (
-                        <RemoveCircleOutlineOutlinedIcon />
-                      ) : (
-                        <ControlPointOutlinedIcon />
-                      )}
-                    </IconButton>
-                  </TableCell>
-                )}
                 {row.map((data, i) => (
                   <TableCell key={i.toString()} align="left">
                     {data}
                   </TableCell>
                 ))}
-                {(view || collapse) && (
+                {view && (
                   <TableCell>
                     <IconButton
                       aria-label="view"
@@ -89,34 +60,6 @@ export default function BasicTable({ props, view, edit, collapse }) {
                   </TableCell>
                 )}
               </TableRow>
-
-              {collapse && (
-                <TableRow>
-                  <TableCell sx={{ padding: 0 }} colSpan={12}>
-                    <Collapse in={open[rowIndex]} timeout="auto" unmountOnExit>
-                      <Box>
-                        <Table>
-                          <TableBody>
-                            <TableRow>
-                              <TableCell sx={{ width: "200px" }} />
-                              {props.collapse[rowIndex].map((data, i) => (
-                                <TableCell
-                                  sx={{ width: "200px" }}
-                                  key={i.toString()}
-                                  align="center"
-                                >
-                                  {data}
-                                </TableCell>
-                              ))}
-                              <TableCell sx={{ width: "200px" }} />
-                            </TableRow>
-                          </TableBody>
-                        </Table>
-                      </Box>
-                    </Collapse>
-                  </TableCell>
-                </TableRow>
-              )}
             </React.Fragment>
           ))}
         </TableBody>
