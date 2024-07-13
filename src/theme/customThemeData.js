@@ -6,11 +6,22 @@ export const navButtonIcon = {
 
 export const navIcon = { fontSize: "30px", color: "common.white" };
 
+// Close icon style
+export const closeButtonIcon = {
+  "&:hover": { boxShadow: "0 0 5px 1px var(--dark-purple)" },
+  transition: ".2s linear",
+  float:"right",
+margin:"10px 20px 0 0"
+};
+
+export const closeIcon = { fontSize: "30px", color: "var(--dark-purple)" };
+
 //  Drawer list
 export const listItem = {
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
+  padding:0
 };
 
 export const listItemTypo = {

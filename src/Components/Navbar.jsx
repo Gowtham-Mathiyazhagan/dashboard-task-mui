@@ -25,7 +25,7 @@ const Navbar = ({ drawerActive }) => {
   };
   return (
     <>
-      <AppBar position="fixed" color="secondary" sx={{ zIndex: 110 }}>
+      <AppBar position="fixed" color="secondary" sx={{ zIndex: 10 }}>
         <Toolbar
           spacing={10}
           sx={{ display: "flex", justifyContent: "space-between" }}

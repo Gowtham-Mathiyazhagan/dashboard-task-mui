@@ -4,9 +4,11 @@ import { headLineTypo } from "../theme/customThemeData";
 import BasicTable from "../Components/BasicTable";
 import { dashboardTable } from "../Data/data";
 import { SelectTextFieldCompo } from "../Components/CustomField";
+import ViewEditForm from "../Components/ViewEditForm";
 
 const ViewResource = () => {
   return (
+    <>
     <Box display="flex" flexDirection="column" gap={5}>
       <Typography variant="h5" sx={headLineTypo}>
         add resource
@@ -27,6 +29,8 @@ const ViewResource = () => {
       </Stack>
       <BasicTable props={dashboardTable} view={true} edit={true} />
     </Box>
+    <ViewEditForm/>
+    </>
   );
 };
 

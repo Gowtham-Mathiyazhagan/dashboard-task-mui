@@ -44,12 +44,13 @@ const DrawerLeft = ({drawerActive}) => {
               height: "100vh",
               top: "70px", // Adjust the top position
               position: "fixed", // Override default position
+              zIndex:0,
             },
           }}
         >
           <Toolbar sx={{ height: "85%", width: "100%" }}>
             <Box width="150px">
-              <List sx={{ display: "flex", flexDirection: "column" }}>
+              <List>
                 {Object.keys(drawerData).map((keyVal) => {
                   return (
                     <ListItem key={keyVal} sx={listItem}>

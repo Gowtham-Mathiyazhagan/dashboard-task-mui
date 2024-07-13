@@ -10,7 +10,7 @@ import { Stack, Box, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useActive } from "./Layout";
 
-const GroupTextField = () => {
+const GroupTextField = ({padding}) => {
   const navigate = useNavigate();
   const activeObj = useActive(); // to set active field in drawer
   const handleClick = () => {
@@ -80,9 +80,8 @@ const GroupTextField = () => {
           <TextFieldCompo props={{ label: "search" }} />
         </Grid>
       </Grid>
-      {/* </Grid> */}
       {/* Second form data */}
-      <Stack direction={"row"} justifyContent={"center"} position={"relative"}>
+      <Stack direction={"row"} justifyContent={"center"} position={"relative"} paddingTop={padding}>
         <Box
           width={"20%"}
           sx={{
@@ -219,8 +218,7 @@ const GroupTextField = () => {
               mb: "20px",
               backgroundColor: "secondary.main",
               "&:hover": {
-                backgroundColor: "secondary.main",
-                opacity: ".5",
+                backgroundColor: "secondary.light",
               },
             }}
             onClick={handleClick}
