@@ -6,6 +6,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { StyledDate } from "../theme/customThemeData";
+import { useSelector, useDispatch } from "react-redux";
 
 const StyledTextField = styled(TextField)`
   & .MuiInputBase-root {
@@ -99,22 +100,28 @@ const StyledGroupTextField = styled(TextField)`
 // GroupText component
 export const TextFieldCompo = ({ props }) => {
   const [groupText, setgroupText] = useState({ text: "" });
+  const dispatch = useDispatch()
 
+  const perUser = useSelector((state)=> state.formData.perUserData)
+  const newPerUser = [{...perUser[0], empNo:"12323"}]
+  console.log(newPerUser)
   function handleChange(e) {
-    setgroupText({ ...groupText, text: e.target.value });
+    
   }
   return (
     <>
       <StyledGroupTextField
         label={props.label}
-        value={groupText.text}
-        onChange={handleChange}
+        name={props.name}
+        // value={groupText.text}
+        onChange={()=>handleChange(props.name)}
         size="small"
         sx={{ width: "100%" }}
       />
     </>
   );
 };
+
 export const SelectTextFieldCompo = ({ props }) => {
   const [groupText, setgroupText] = useState({ text: "" });
 
@@ -125,6 +132,7 @@ export const SelectTextFieldCompo = ({ props }) => {
     <>
       <StyledGroupTextField
         label={props.label}
+        name={props.name}
         value={groupText.text}
         onChange={handleChange}
         size="small"
@@ -148,24 +156,25 @@ export const SelectTextFieldCompo = ({ props }) => {
   );
 };
 
-export const SelectDateCompo = () => {
+export const SelectDateCompo = ({ props }) => {
   const [date, setDate] = useState(null);
 
   function handleChange(val) {
     setDate(val.d);
   }
-  console.log(date)
+
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker
-          label={"Select date"}
+          label={props.label}
+          name={props.name}
           value={date}
           onChange={handleChange}
           slotProps={{
             textField: {
-          size:"small",
-          sx:{...StyledDate},
+              size: "small",
+              sx: { ...StyledDate },
             },
           }}
         />
@@ -178,4 +187,4 @@ export const StyledTypoAddresource = styled(Typography)`
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 800 !important;
-`
+`;

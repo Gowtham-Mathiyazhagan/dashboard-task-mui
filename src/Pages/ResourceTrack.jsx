@@ -14,8 +14,8 @@ const ResourceTrack = () => {
       <Stack flexDirection={"row"} gap={"20px"}>
         <TextFieldCompo props={{ label: "search" }} />
         <TextFieldCompo props={{ label: "search" }} />
-        <SelectDateCompo />
-        <SelectDateCompo />
+        <SelectDateCompo props={{ label: "date" }}/>
+        <SelectDateCompo props={{ label: "date" }}/>
       </Stack>
       <CollapseTable props={collapseleTableData}  />
     </Box>

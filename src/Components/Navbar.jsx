@@ -36,7 +36,7 @@ const Navbar = ({ drawerActive }) => {
             sx={
               MenuPath() // this path deterimine the Icon have to show or unshow
                 ? { display: "none" }
-                : { display: "block", navButtonIcon }
+                : { display: "flex", ...navButtonIcon }
             }
           >
             {drawerActive?.openDrawer ? (
